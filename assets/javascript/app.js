@@ -12,7 +12,7 @@ function createButtons() {
 }
 function displayGif() {
     var gifName = $(this).attr("data-name");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + gifName + "&api_key=UIcheBD4aNnGl9qzv89JH5tOKQIsHky3&limit=5&fmt";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifName + "&api_key=UIcheBD4aNnGl9qzv89JH5tOKQIsHky3&limit=5&fmt";
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -24,14 +24,6 @@ function displayGif() {
         $("#gifImage").append(gifImage);
         $("#gifImage").append("Rating: " + gifRating + "<br>");
         console.log(response.data[0]);
-        // $("#gifImage").on("click", function(){
-        //     if (imageURL === true) {
-        //         var movingURL = response.data[0].images.fixed_height.url
-        //         $("#gifImage", "src").empty().attr("src", movingURL);
-        //         console.log(click);
-        //     }
-
-        // })
     });
       
 
